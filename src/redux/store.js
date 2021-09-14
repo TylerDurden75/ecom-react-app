@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { createStore, applyMiddleware } from "redux";
 import { persistStore } from "redux-persist"; // allow browser to cache
 import logger from "redux-logger";
