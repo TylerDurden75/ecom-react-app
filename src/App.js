@@ -35,6 +35,13 @@ class App extends React.Component {
         });
       } else {
         setCurrentUser(userAuth);
+
+        /*Function to push collections into firestore app*/
+
+        // addCollectionAndDocuments(
+        //   "collections",
+        //   collectionsArray.map(({ title, items }) => ({ title, items }))
+        // );
       }
     });
   }
