@@ -20,6 +20,13 @@
     position: absolute;
     top: 255px;
     display: none;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+      opacity: 0.9;
+      min-width: unset;
+      padding: 0 10px 0 10px;
+    }
   }
 
   &:hover {
@@ -41,12 +48,26 @@
     font-size: 18px;
 
     .name {
-      width: 90%;
+      width: 85%;
       margin-bottom: 15px;
     }
 
     .price {
-      width: 10%;
+      width: 15%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+    }
+
+    button {
+      opacity: unset;
     }
   }
 }
