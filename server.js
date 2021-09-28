@@ -1,4 +1,4 @@
-import { express } from "express";
+import express from "express";
 const bodyParser = require("body-parser");
 const path = require("body-parser");
 
