@@ -1,5 +1,6 @@
-import express, { static } from "express";
-import { json, urlencoded, path } from "body-parser";
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("body-parser");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -8,14 +9,14 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(json());
-app.use(urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(static(path.join(__dirname, "client/build")));
+  app.use(express.static(__dirname, "client/build"));
 
   app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+    res.sendFile(__dirname, "client/build", "index.html");
   });
 }
 
